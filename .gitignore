@@ -1,12 +1,5 @@
-/public/assets/adminlte
-/public/assets/adminLTE
 /storage/app/public
-/public/profiles
-/public/storage
 /storage/*.key
-/node_modules
-/public/hot
-/vendor
 .env
 .env.backup
 .phpunit.result.cache
