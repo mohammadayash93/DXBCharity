@@ -3,14 +3,16 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', 'App\Http\Controllers\Front\FrontController@index');
-Route::get('/home', 'App\Http\Controllers\Front\FrontController@index')->name('index');
-
+Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']], function()
+{
+    Route::get('/', 'App\Http\Controllers\Front\FrontController@index')->name('index');
+    Route::get('/home', 'App\Http\Controllers\Front\FrontController@index')->name('home');
+});
 
 Route::group(['prefix' => 'admin'], function() {
     Auth::routes();
-    Route::get('/', 'App\Http\Controllers\HomeController@index');
-    Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home');
+    Route::get('/', 'App\Http\Controllers\HomeController@index')->name('admin.index');
+    Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('admin.home');
     Route::get('/config', 'App\Http\Controllers\ConfigController@index')->name('config');
     Route::put('/config/update/{id}', 'App\Http\Controllers\ConfigController@update')->name('config.update');
 
