@@ -33,6 +33,7 @@
 						<table id="tabelapadrao" class="table table-condensed table-bordered table-hover">
 							<thead>
 								<tr>
+									<th>Order</th>
 									<th>Arabic Name</th>
 									<th>Name</th>
 									<th class="text-center">Image</th>
@@ -43,6 +44,7 @@
 							<tbody>
 								@foreach($pages as $page)
 									<tr>
+                                            <td>{{ $page->order_number }}</td>
                                             <td>{{ $page->ar_name }}</td>
                                             <td>{{ $page->name }}</td>
 											<td class="text-center"><img src="{{ asset($page->image) }}" style="height: 75px; width:75px; border-radius: 100%;" /></td>
@@ -76,6 +78,7 @@
 							</tbody>
 							<tfoot>
 								<tr>
+									<th>Order</th>
 									<th>Arabic Name</th>
 									<th>Name</th>
 									<th class="text-center">Image</th>

@@ -7,6 +7,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
 {
     Route::get('/', 'App\Http\Controllers\Front\FrontController@index')->name('index');
     Route::get('/home', 'App\Http\Controllers\Front\FrontController@index')->name('home');
+    Route::get('/donate', 'App\Http\Controllers\Front\FrontController@donate')->name('donate');
+    Route::get('/page/{slug}', 'App\Http\Controllers\Front\FrontController@page')->name('page.slug');
 });
 
 Route::group(['prefix' => 'admin'], function() {

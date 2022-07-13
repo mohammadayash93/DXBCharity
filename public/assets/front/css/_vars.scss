@@ -1,0 +1,55 @@
+
+/***********
+*
+* vars
+*
+***********/
+
+$main: #3DB54A;
+$white: #ffffff;
+$second: #A0C952;
+$black: #4d4a4f;
+$fontColor: $black;
+$lightMain: #C2E3FF;
+$lightSecond: #FFEAC9;
+$light: #EEEBFB;
+$grey: #F5F5F5;
+$grey2: #D3D3D3;
+$grey3: #B7E0FF;
+$gradient_1:linear-gradient(to left, #616B71, #A7B6BF);
+$gradient_2:linear-gradient(to right, #616B71, #A7B6BF);
+$red: #EE4037;
+$orange: #F5BC38;
+$yellow: #EDFE00;
+$green: #50D559;
+$lightGreen: #C2FFD0;
+$body: $white;
+$margin-10: 10px;
+$margin-20: 20px;
+$margin-30: 30px;
+
+$extrahuge:80px;
+$huge:60px;
+$extrabig:50px;
+$big:40px;
+$extramedium:30px;
+$medium:25px;
+$semimedium:20px;
+$normal:15px;
+$small:13px;
+$extrasmall:9px;
+
+:root {
+    --main: #{$main};
+    --second: #{$second};
+    --fontColor: #{$black};
+    --black: #{$black};
+    --white: #{$white};
+    --body: #{$body};
+    --grey: #{$grey};
+    --grey2: #{$grey2};
+    --grey3: #{$grey3};
+    --green: #{$green};
+    --red: #{$red};
+    --orange: #{$orange};
+  }

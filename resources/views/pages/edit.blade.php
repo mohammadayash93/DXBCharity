@@ -80,7 +80,22 @@
                                         <img src="{{ asset($page->image) }}" id="profile-img-tag" height="100" width="100">
                                     </div>
                                 </div>
-
+                                <div class="col-lg-6">
+                                    <div class="form-group {{ $errors->has('order_number') ? 'has-error' : '' }}">
+                                        <label for="nome">Order</label>
+                                        <input type="number" min="0" name="order_number" class="form-control"  placeholder="Order" required="" value="{{ $page->order_number }}" autofocus>
+                                        @if($errors->has('order_number'))
+                                            <span class="help-block">
+                                                <strong>{{ $errors->first('order_number') }}</strong>
+                                            </span>
+                                        @endif
+                                    </div>
+                                </div>
+                                <div class="col-lg-12"></div>
+                                <div class="form-check col-lg-6">
+                                    <input type="checkbox" name="is_menu" class="form-check-input"  @if($page->is_menu) checked  @endif id="exampleCheck1">
+                                    <label class="form-check-label" for="exampleCheck1">Show in menu</label>
+                                </div>
                                 <div class="col-lg-6">
                                    <button type="submit" class="btn btn-primary pull-right"><i class="fa fa-fw fa-save"></i> Save</button>
                                 </div>

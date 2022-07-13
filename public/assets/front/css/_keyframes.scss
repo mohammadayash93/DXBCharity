@@ -1,0 +1,36 @@
+
+@keyframes rotat {
+  0%, 100% {
+    @include transF(none);
+  }
+  50% {
+    @include transF(rotateY(90deg));
+  }
+}
+
+@-webkit-keyframes rotat {
+  0%, 100% {
+    @include transF(none);
+  }
+  50% {
+    @include transF(rotateY(90deg));
+  }
+}
+
+@keyframes inversrotat {
+  0%, 100% {
+    @include transF(none);
+  }
+  50% {
+    @include transF(rotateY(-90deg));
+  }
+}
+
+@-webkit-keyframes inversrotat {
+  0%, 100% {
+    @include transF(none);
+  }
+  50% {
+    @include transF(rotateY(-90deg));
+  }
+}

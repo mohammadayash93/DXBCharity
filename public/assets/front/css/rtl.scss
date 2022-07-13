@@ -1,0 +1,105 @@
+/**
+ * DXB Charity Website
+ * Version: 1.1
+ * Powerd by: DXB Charity
+ * Ui Designer: Ayat Ahmed | instagram.com/ayaat.a7med
+ * Front End Developer: Ayat Ahmed | instagram.com/ayaat.a7med
+ * Copyrights 2022
+ */
+@import "vars";
+@import "rtlmedia";
+@import "mixins";
+
+.flip-y {
+  @include transF(rotateY(180deg));
+}
+
+.flip-x {
+  @include transF(rotateX(180deg));
+}
+
+.main-title {
+  font-family: "Noto Sans Arabic", "Tajawal", "URW DIN Arabic",Arial;
+}
+
+.sub-title {
+  font-family: "Tajawal", "Noto Sans Arabic","URW DIN Arabic", Arial;
+}
+
+html {
+  @extend .sub-title;
+}
+
+.transform-none {
+  @include transF(none);
+}
+
+.text-right,
+.txt-right {
+  text-align: left;
+}
+
+.text-left,
+.txt-left {
+  text-align: right;
+}
+
+.owl-carousel,
+#booking-startingtime input[type="range"],
+.arrows,
+.creatores-images {
+  direction: ltr;
+}
+
+.fa-star-half {
+  @extend .flip-y;
+}
+
+.aa-switch-check::before {
+  left: 1.5px;
+  right: auto;
+}
+
+.fl-right,
+.sub-media .arrows {
+  float: left;
+}
+
+.fl-left {
+  float: right;
+}
+
+.fa-star-half-alt {
+  @extend .flip-y;
+}
+.fa-arrow-right,
+.fa-arrow-left {
+  @extend .flip-y;
+}
+.form-control {
+  text-align: right;
+}
+.slick-dots {
+  @extend .flip-x;
+}
+.close-menu-icon {
+  right: 35px;
+  left: auto;
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow,
+.select2-container--default[dir="rtl"] .select2-selection--single .select2-selection__arrow {
+  left: 10px;
+  right: auto;
+}
+.main-header .search-wrapper .search-input input[type="search"] {
+  padding-right: 50px;
+  padding-left: 20px;
+}
+.page-form .form-group button {
+  left: 0;
+  right: auto;
+}
+.donate-step .step-num {
+  right: -2px;
+  left: auto;
+}

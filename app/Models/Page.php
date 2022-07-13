@@ -12,7 +12,7 @@ class Page extends Model
     public $table = 'pages';
 
     protected $fillable = [
-        'name', 'ar_name', 'description', 'ar_description', 'image'
+        'slug', 'name', 'ar_name', 'description', 'ar_description', 'image', 'is_menu', 'order_number'
     ];
 
 }

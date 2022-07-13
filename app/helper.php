@@ -3,7 +3,14 @@
 use App\Models\Models\Category;
 use App\Models\Models\City;
 use App\Models\Models\Country;
+use App\Models\Models\Page;
 use App\Models\User;
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
+
+function get_locale()
+{
+    return LaravelLocalization::getCurrentLocale();
+}
 
 function print_role_name($id){
     echo $id == 1 ? '<b style="color: #17a2b8">Admin</b>' : '<b style="color: #6c757d">Donator</b>';
@@ -25,6 +32,7 @@ function get_cities(){
     return City::all();
 }
 
+
 function get_categories(){
     return Category::all();
 }
@@ -33,4 +41,22 @@ function get_cities_by_country_id($id){
     return City::where('country_id', $id)->get();
 }
 
+function get_menu_pages(){
+    return Page::where('is_menu', 1)->orderBy('order_number')->get();
+}
+
+function print_value($obj, $attr){
+    switch($attr){
+        case 'name':
+            return get_locale() == 'ar' ? $obj->ar_name : $obj->name;
+            break;
+        case 'description':
+            return get_locale() == 'ar' ? $obj->ar_description : $obj->description;
+            break;
+
+            default:
+                return '';
+
+        }
+}
 ?>

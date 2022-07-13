@@ -9,21 +9,16 @@ use App\Http\Requests\Page\UpdatePageRequest;
 use App\Models\Models\Page;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class PageController extends Controller
 {
     use Media;
     public function index(Request $request)
     {
-        $filter = $request->query('search');
-        $pages = !empty($filter) ? Page::where(function ($query) use($filter) {
-            $query->where('name', 'like', '%'.$filter.'%')
-                  ->orWhere('ar_name', 'like', '%'.$filter.'%')
-                  ->orWhere('description', 'like', '%'.$filter.'%')
-                  ->orWhere('ar_description', 'like', '%'.$filter.'%');
-        })->paginate(15):Page::paginate(15);
+        $pages = Page::paginate(15);
 
-        return view('pages.index', compact('pages', 'filter'));
+        return view('pages.index', compact('pages'));
     }
 
     public function show($id)
@@ -57,11 +52,14 @@ class PageController extends Controller
         if($file = $request->file('image')) {
             $fileData = $this->uploads($file,'page/');
             $page = Page::create([
+                       'slug' => Str::slug($request['name']),
                        'ar_name' => $request['ar_name'],
                        'name' => $request['name'],
                        'description' => $request['description'],
                        'ar_description' => $request['ar_description'],
                        'image' => $fileData['filePath'],
+                       'is_menu' => $request['is_menu'] ? 1: 0,
+                       'order_number' => $request['order_number'],
                        'created_at' => Carbon::now(),
                        'updated_at' => Carbon::now()
                     ]);
@@ -118,6 +116,8 @@ class PageController extends Controller
         $page->name = $request->name;
         $page->description = $request->description;
         $page->ar_description = $request->ar_description;
+        $page->order_number = $request->order_number;
+        $page->is_menu = $request->is_menu ? 1 : 0;
         $page->updated_at = Carbon::now();
         $page->save();
 

@@ -1,0 +1,169 @@
+/**
+ * DXB Charity Website
+ * Version: 1.1
+ * Powerd by: DXB Charity
+ * Ui Designer: Ayat Ahmed | instagram.com/ayaat.a7med
+ * Front End Developer: Ayat Ahmed | instagram.com/ayaat.a7med
+ * Copyrights 2022
+ */
+/***********
+*
+* vars
+*
+***********/
+:root {
+  --main: #3DB54A;
+  --second: #A0C952;
+  --fontColor: #4d4a4f;
+  --black: #4d4a4f;
+  --white: #ffffff;
+  --body: #ffffff;
+  --grey: #F5F5F5;
+  --grey2: #D3D3D3;
+  --grey3: #B7E0FF;
+  --green: #50D559;
+  --red: #EE4037;
+  --orange: #F5BC38; }
+
+@media (max-width: 575.98px) {
+  .main-story .item.second {
+    padding-left: 0;
+    padding-right: 50px; }
+
+  .main-story .item.second::before {
+    right: -1px;
+    left: auto; }
+
+  .main-story .item.second .count::before {
+    right: -60px;
+    left: auto; } }
+@media (min-width: 576px) and (max-width: 767.98px) {
+  #subHeader .title {
+    text-align: right; } }
+@media (min-width: 992px) {
+  .text-lg-right {
+    text-align: left; }
+
+  .text-lg-left {
+    text-align: right; }
+
+  .fl-lg-right {
+    float: left; }
+
+  .fl-lg-left {
+    float: right; }
+
+  .fl-lg-none {
+    float: none; }
+
+  .txt-lg-right {
+    text-align: left; }
+
+  .txt-lg-left {
+    text-align: right; }
+
+  .txt-lg-center {
+    text-align: center; }
+
+  .def-border-lg-right:not(.def-border-lg-left) {
+    border-left: 1px solid #c0c0c0;
+    border-right: 0; }
+
+  .def-border-lg-left:not(.def-border-lg-right) {
+    border-right: 1px solid #c0c0c0;
+    border-left: 0; }
+
+  .search-wrapper .select2-container:not(:first-child) {
+    border-right: 1px solid var(--grey2);
+    padding-right: 10px;
+    border-left: 0;
+    padding-left: 0; } }
+@media (min-width: 1200px) {
+  .fl-xl-right {
+    float: left; }
+
+  .fl-xl-left {
+    float: right; } }
+/***********
+*
+* Style Functions
+*
+***********/
+.flip-y, .fa-star-half, .fa-star-half-alt, .fa-arrow-right,
+.fa-arrow-left {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  transform: rotateY(180deg); }
+
+.flip-x, .slick-dots {
+  -webkit-transform: rotateX(180deg);
+  -moz-transform: rotateX(180deg);
+  -o-transform: rotateX(180deg);
+  -ms-transform: rotateX(180deg);
+  transform: rotateX(180deg); }
+
+.main-title {
+  font-family: "Noto Sans Arabic", "Tajawal", "URW DIN Arabic",Arial; }
+
+.sub-title, html {
+  font-family: "Tajawal", "Noto Sans Arabic","URW DIN Arabic", Arial; }
+
+.transform-none {
+  -webkit-transform: none;
+  -moz-transform: none;
+  -o-transform: none;
+  -ms-transform: none;
+  transform: none; }
+
+.text-right,
+.txt-right {
+  text-align: left; }
+
+.text-left,
+.txt-left {
+  text-align: right; }
+
+.owl-carousel,
+#booking-startingtime input[type="range"],
+.arrows,
+.creatores-images {
+  direction: ltr; }
+
+.aa-switch-check::before {
+  left: 1.5px;
+  right: auto; }
+
+.fl-right,
+.sub-media .arrows {
+  float: left; }
+
+.fl-left {
+  float: right; }
+
+.form-control {
+  text-align: right; }
+
+.close-menu-icon {
+  right: 35px;
+  left: auto; }
+
+.select2-container--default .select2-selection--single .select2-selection__arrow,
+.select2-container--default[dir="rtl"] .select2-selection--single .select2-selection__arrow {
+  left: 10px;
+  right: auto; }
+
+.main-header .search-wrapper .search-input input[type="search"] {
+  padding-right: 50px;
+  padding-left: 20px; }
+
+.page-form .form-group button {
+  left: 0;
+  right: auto; }
+
+.donate-step .step-num {
+  right: -2px;
+  left: auto; }
+
+/*# sourceMappingURL=rtl.css.map */

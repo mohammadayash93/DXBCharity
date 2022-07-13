@@ -1,7 +1,7 @@
 <header class="main-header">
-  <a href="{{ route('home') }}" class="logo">
-    <span class="logo-mini"><img style="height:25px; width:35px;" src="{!! asset(\App\Models\Config::find(1)->app_logo) !!}" /></span>
-    <span class="logo-lg"><img style="height:50px; width:70px;" src="{!! asset(\App\Models\Config::find(1)->app_logo) !!}" /> </span>
+  <a href="{{ route('admin.home') }}" class="logo">
+    <span class="logo-mini"><img style="height:25px; width:35px;" src="{!! asset(\App\Models\Config::find(1)->img_login) !!}" /></span>
+    <span class="logo-lg"><img style="height:50px; width:70px;" src="{!! asset(\App\Models\Config::find(1)->img_login) !!}" /> </span>
   </a>
   <nav class="navbar navbar-static-top">
     <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">

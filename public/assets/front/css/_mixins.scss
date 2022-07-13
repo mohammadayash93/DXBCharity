@@ -1,0 +1,79 @@
+
+/***********
+*
+* Style Functions
+*
+***********/
+@mixin trans($d) {
+  -webkit-transition: $d;
+  -moz-transition: $d;
+  -o-transition: $d;
+  -ms-transition: $d;
+  transition: $d;
+}
+
+@mixin opc($p) {
+  -webkit-opacity: $p;
+  -moz-opacity: $p;
+  -o-opacity: $p;
+  -ms-opacity: $p;
+  opacity: $p;
+}
+@mixin bgImg($p) {
+  -moz-background-image: url($p);
+  -o-background-image: url($p);
+  -webkit-background-image: url($p);
+  background-image: url($p);
+}
+
+@mixin transF($p) {
+  -webkit-transform: $p;
+  -moz-transform: $p;
+  -o-transform: $p;
+  -ms-transform: $p;
+  transform: $p;
+}
+@mixin bShadow($s) {
+  -webkit-box-shadow: $s;
+  -moz-box-shadow: $s;
+  -ms-box-shadow: $s;
+  -o-box-shadow: $s;
+  box-shadow: $s;
+}
+@mixin rad($s) {
+  -webkit-border-radius: $s;
+  -moz-border-radius: $s;
+  -ms-border-radius: $s;
+  -o-border-radius: $s;
+  border-radius: $s;
+}
+@mixin mask-box-image($s) {
+  -webkit-mask-box-image: url($s);
+  -moz-mask-box-image: url($s);
+  -ms-mask-box-image: url($s);
+  -o-mask-box-image: url($s);
+  mask-box-image: url($s);
+}
+@mixin flexbox() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin flex($v) {
+  -webkit-box-flex: $v;
+  -moz-box-flex:  $v;
+  -webkit-flex:  $v;
+  -ms-flex:  $v;
+  flex:  $v;
+}
+
+@mixin order($v) {
+  -webkit-box-ordinal-group: $v;
+  -moz-box-ordinal-group: $v;
+  -ms-flex-order: $v;
+  -webkit-order: $v;
+  order: $v;
+}

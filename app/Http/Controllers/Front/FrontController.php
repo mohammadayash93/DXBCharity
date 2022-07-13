@@ -5,6 +5,7 @@ use App\Helper\Media;
 use App\Http\Requests\Item\StoreItemRequest;
 use App\Http\Requests\Item\UpdateItemRequest;
 use App\Http\Controllers\Controller;
+use App\Models\Models\Page;
 use Illuminate\Http\Request;
 
 class FrontController extends Controller
@@ -15,19 +16,17 @@ class FrontController extends Controller
         return view('front.home');
     }
 
-    public function show($id)
+    public function page($slug)
     {
-        //$this->authorize('show-role', User::class);
-
-        $page = Page::find($id);
+        $page = Page::where('slug', $slug)->first();
 
         if(!$page){
             $this->flashMessage('warning', 'Page not found!', 'danger');
-            return redirect()->route('page');
+            return redirect()->route('index');
         }
 
 
-        return view('pages.show',compact('page'));
+        return view('front.page',compact('page'));
     }
 
     public function create()
