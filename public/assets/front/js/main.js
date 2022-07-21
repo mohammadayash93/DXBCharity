@@ -2,22 +2,34 @@
  * DXB Charity Website
  * Version: 1.1
  * Powerd by: DXB Charity
- * Ui Designer: Ayat Ahmed | instagram.com/ayaat.a7med
- * Front End Developer: Ayat Ahmed | instagram.com/ayaat.a7med
+ * Developer: Mohammad Ayash
  * Copyrights 2022
  */
 $(document).ready(function () {
   function readFileURL(input, output) {
-    if (input[0].files[0]) {
-      var f = input[0].files[0];
-      output.html("");
-      output.append('<div class="fileItem d-flex align-items-center p-2 def-border grey-bg mt-2"><div class="ps-2 fti"> <i class="fas fa-image not p-0 ms-0 me-2"></i> <span>' + f.name + '</span></div> <div class="fdel" data-parent="#upload-area"><i class="fas fa-times not p-0 m-0"></i></div></div> ');
+    output.html("");
+    for (let index = 0; index < input[0].files.length; index++) {
+        if (input[0].files[index]) {
+            var f = input[0].files[index];
+            output.append('<div class="fileItem d-flex align-items-center p-2 def-border grey-bg mt-2"><div class="ps-2 fti"> <i class="fas fa-image not p-0 ms-0 me-2"></i> <span>' + f.name + '</span></div> </div> ');
+        }
     }
+//<div class="fdel" data-id="'+f.name+'" data-parent="#upload-area"><i class="fas fa-times not p-0 m-0"></i></div>
   }
   $(document).on("click", ".fileItem .fdel", function () {
-    var inp = $(this).attr("data-parent"),
-      fl = $(inp).find("input[type=file]");
-    fl.val("");
+    var inp = $(this).attr("data-parent");
+   // var v = $(this).attr("data-id");
+    fl = $(inp).find("input[type=file]");
+   // var names = [];
+    //for (var i = 0; i < fl.get(0).files.length; ++i) {
+      //  if(fl.get(0).files[i].name == v){
+      //      fl.get(0).files.splice(i, 1);
+      //  }else{
+      //      names.push(fl.get(0).files[i].name);
+      //  }
+   // }
+    //console.log(names);
+    //fl.val("");
     $(this).parents(".fileItem").remove();
   })
   function responsiveSquareFunc() {
@@ -69,10 +81,11 @@ $(document).ready(function () {
     });
 
   }
+
   var fls = $('.files'),
     frm = $('.upload-area'),
     frmInp = $('.upload-area input[type=file]'),
-    validFs = ['image/gif', 'image/jpeg', 'image/png',
+    validFs = ['image/gif', 'image/jpeg', 'image/png', 'image/svg',
       'pplication/vnd.openxmlformats-officedocument.wordprocessingml.document', 'application/msword'];
 
   frmInp.on('dragover dragenter', function () {

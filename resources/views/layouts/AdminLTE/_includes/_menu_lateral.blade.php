@@ -116,7 +116,7 @@
 						{{ Request::segment(2) === 'contact' ? 'active' : null }}
 						">
 						<a href="{{ route('contact') }}" title="Contact">
-							<i class="fa fa-address-card-o" aria-hidden="true"></i> <span> Contact</span>
+							<i class="fa fa-address-book" aria-hidden="true"></i> <span> Contact</span>
 						</a>
 					</li>
 				</ul>

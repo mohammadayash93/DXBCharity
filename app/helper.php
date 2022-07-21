@@ -1,8 +1,10 @@
 <?php
 
+use App\Models\Contact;
 use App\Models\Models\Category;
 use App\Models\Models\City;
 use App\Models\Models\Country;
+use App\Models\Models\Item;
 use App\Models\Models\Page;
 use App\Models\User;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
@@ -20,6 +22,9 @@ function get_role_name($id){
     return $id == 1 ? 'Admin' : 'Donator';
 }
 
+function get_contact(){
+    return Contact::first();
+}
 function get_users(){
     return User::all();
 }
@@ -58,5 +63,30 @@ function print_value($obj, $attr){
                 return '';
 
         }
+}
+
+function print_address($obj){
+    $address = get_locale() == 'ar' ? $obj->city->country->ar_name . ' - ' . $obj->city->ar_name . ' - ' . $obj->address : $obj->address . ', ' . $obj->city->name . ', ' . $obj->city->country->name;
+    return $address;
+}
+
+function similar_items($item){
+    $itemscategory = Item::where('id', '!=', $item->id)->where('category_id', $item->category_id)->take(3)->get();
+    if(count($itemscategory) > 2){
+        return $itemscategory;
+    }else{
+        $itemcity = Item::where('id', '!=', $item->id)->where('city_id', $item->city_id)->take(3)->get();
+        if(count($itemcity)>2){
+            return $itemcity;
+        }else{
+            $cities = City::select('id')->where('country_id', $item->city->country_id)->get();
+            $itemscountry = Item::where('id', '!=', $item->id)->where('city_id', 'in' ,$cities)->take(3)->get();
+            if(count($itemscountry)>2){
+                return $itemscountry;
+            }else{
+                return Item::where('id', '!=', $item->id)->orderBy('created_at', 'desc')->take(3)->get();
+            }
+        }
+    }
 }
 ?>

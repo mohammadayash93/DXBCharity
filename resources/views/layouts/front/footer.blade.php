@@ -15,6 +15,9 @@
                 <span class="d-inline-block">{{ print_value($page, 'name') }}</span>
             </a>
             @endforeach
+            <a class="nav-link d-inline-block txt-uppercase f-normal f-w-700" href="{{ route('front.contact', get_contact()->slug) }}"  title="{{ print_value(get_contact(), 'name') }}">
+                <span class="d-inline-block">{{ print_value(get_contact(), 'name') }}</span>
+            </a>
             @if(get_locale() == 'ar')
             <a class="nav-link d-inline-block txt-uppercase f-normal f-w-700" href="{{ LaravelLocalization::getLocalizedURL('en', null, [], true) }}"  title="English">
                 <span class="d-inline-block">English</span>
@@ -68,5 +71,6 @@
   @else
     <script type="text/javascript" src="{{ asset('assets/front/js/ltr.js')}}"></script>
   @endif
+  @yield('scripts')
 </body>
 </html>

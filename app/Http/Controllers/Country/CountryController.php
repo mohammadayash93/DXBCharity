@@ -228,7 +228,7 @@ class CountryController extends Controller
     {
         if($request->country_id){
             $data['cities'] = City::where("country_id",$request->country_id)
-                        ->get(["name","id"]);
+                        ->get(["name", "ar_name","id"]);
         }else{
             $data['cities'] = array();
         }

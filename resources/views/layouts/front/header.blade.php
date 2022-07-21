@@ -50,6 +50,9 @@
                         <span>{{ print_value($page, 'name') }}</span>
                     </a>
                 @endforeach
+                <a class="menu-link d-block pt-3 pb-3 ps-4 pe-4 txt-capitalize f-light h5 mb-lg-3 mb-1" href="{{ route('front.contact', get_contact()->slug) }}"  title="{{ print_value(get_contact(), 'name') }}">
+                    <span>{{ print_value(get_contact(), 'name') }}</span>
+                </a>
                 @if(get_locale()=='ar')
                 <a class="menu-link d-block pt-3 pb-3 ps-4 pe-4 txt-capitalize f-light h5 mb-lg-3 mb-1" href="{{ LaravelLocalization::getLocalizedURL('en', null, [], true) }}"  title="English">
                     <span>English</span>
@@ -83,6 +86,9 @@
                             <span class="d-inline-block">{{ print_value($page, 'name') }}</span>
                         </a>
                     @endforeach
+                    <a class="nav-link d-lg-inline-block d-none" href="{{ route('front.contact', get_contact()->slug) }}">
+                        <span class="d-inline-block">{{ print_value(get_contact(), 'name') }}</span>
+                    </a>
                     @if(get_locale() == 'ar')
                     <a class="nav-link d-lg-inline-block d-none" href="{{ LaravelLocalization::getLocalizedURL('en', null, [], true) }}">
                         <span class="d-inline-block">English</span>

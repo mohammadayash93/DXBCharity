@@ -2,8 +2,7 @@
  * DXB Charity Website
  * Version: 1.1
  * Powerd by: DXB Charity
- * Ui Designer: Ayat Ahmed | instagram.com/ayaat.a7med
- * Front End Developer: Ayat Ahmed | instagram.com/ayaat.a7med
+ * Developer: Mohammad Ayash
  * Copyrights 2022
  */
 /***********
@@ -424,10 +423,8 @@
 *
 * Style Elements
 *
-* Designer: Ayat Ahmed | instagram.com/ayaat.a7med
-* Copyrights 2021
-*
 **********/
+
 .col-2dot4,
 .col-sm-2dot4,
 .col-md-2dot4,
@@ -2202,5 +2199,6 @@ body {
 .select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b,
 .select2-container--default .select2-selection--single .select2-selection__arrow b {
   display: none !important; }
+
 
 /*# sourceMappingURL=main.css.map */
